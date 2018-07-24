@@ -29,6 +29,7 @@ Tasks:
 |5| AngularJS |
 |6| PostgreSQL |
 
+---
 
 ### DATABASE DUMP
 
