@@ -29,9 +29,8 @@ Tasks:
 
 ### DATABASE DUMP
 
-| Table | SQL |
-| ----- | ----- |
-|users| CREATE TABLE users/n
+`<
+CREATE TABLE users
 (
   id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
   name character varying(255),
@@ -42,8 +41,9 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE users
-  OWNER TO postgres; |
-|sectors|CREATE TABLE sectors
+  OWNER TO postgres;
+  
+CREATE TABLE sectors
 (
   id integer NOT NULL DEFAULT nextval('sector_id_seq'::regclass),
   parent_id integer,
@@ -54,8 +54,9 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE sectors
-  OWNER TO postgres;|
-|user_sector|CREATE TABLE user_sector
+  OWNER TO postgres;
+
+CREATE TABLE user_sector
 (
   user_id integer NOT NULL,
   sector_id integer NOT NULL,
@@ -70,20 +71,23 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE user_sector
-  OWNER TO postgres;|
-|sector_id_seq|CREATE SEQUENCE sector_id_seq
+  OWNER TO postgres;
+
+CREATE SEQUENCE sector_id_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 9223372036854775807
   START 7
   CACHE 1;
 ALTER TABLE sector_id_seq
-  OWNER TO postgres;|
-|user_id_seq|CREATE SEQUENCE user_id_seq
+  OWNER TO postgres;
+
+CREATE SEQUENCE user_id_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 9223372036854775807
   START 4
   CACHE 1;
 ALTER TABLE user_id_seq
-  OWNER TO postgres;|
+  OWNER TO postgres;
+>`
