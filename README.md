@@ -29,7 +29,7 @@ Tasks:
 
 ### DATABASE DUMP
 
-`<
+<
 CREATE TABLE users
 (
   id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
@@ -90,4 +90,4 @@ CREATE SEQUENCE user_id_seq
   CACHE 1;
 ALTER TABLE user_id_seq
   OWNER TO postgres;
->`
+>
