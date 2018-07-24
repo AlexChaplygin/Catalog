@@ -57,10 +57,17 @@ public class MainController {
      * @return TokenObjectDTO
      */
     @PutMapping("/save")
-    public TokenObjectDTO saveNewUser(@RequestBody UserForSaveDTO user) {
-        userService.saveUser(user);
+    public UserForSaveDTO saveNewUser(@RequestBody UserForSaveDTO user) {
+        User resultUser = userService.saveUser(user);
 
-        return tokenService.createToken(user.getUser().getName());
+        if(resultUser != null) {
+            return UserForSaveDTO.builder()
+                    .user(resultUser)
+                    .token(tokenService.createToken(user.getUser().getName()))
+                    .build();
+        }
+
+        return null;
     }
 
     /**
@@ -68,7 +75,6 @@ public class MainController {
      * Return registration token
      *
      * @param user
-     * @return TokenObjectDTO
      */
     @PutMapping("/update")
     public void updateUser(@RequestBody UserForSaveDTO user) {

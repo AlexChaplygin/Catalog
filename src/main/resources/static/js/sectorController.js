@@ -59,12 +59,16 @@ mainModule.controller('sectorController', function ($scope, $http, $rootScope, $
         response.success(function (data) {
             console.log("data   " + data);
 
-            if (data.token) {
-                $scope.selectDisabled = true;
-                $localStorage.token = data.token;
-            }
-
             $scope.data = data;
+
+            if($scope.data) {
+                $scope.users.selectedUser = $scope.data.user;
+
+                if (data.token) {
+                    $scope.selectDisabled = true;
+                    $localStorage.token = data.token;
+                }
+            }
 
 
         });

@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(UserForSaveDTO user) {
+    public User saveUser(UserForSaveDTO user) {
         User userForSave = user.getUser();
         Set<Sector> list = new HashSet<>();
 
@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
         }
 
         userForSave.setSectors(list);
-        usersRepository.save(userForSave);
+        return usersRepository.save(userForSave);
     }
 
     /**

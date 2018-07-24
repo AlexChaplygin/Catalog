@@ -11,5 +11,6 @@ import ru.reksoft.chaplygin.catalog.entity.User;
 public class UserForSaveDTO {
 
     private User user;
+    private TokenObjectDTO token;
     private String sectorIds;
 }

@@ -12,6 +12,6 @@ public interface UserService {
 
     UserDTO findById(Integer id);
 
-    void saveUser(UserForSaveDTO user);
+    User saveUser(UserForSaveDTO user);
 
 }
