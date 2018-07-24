@@ -29,8 +29,8 @@ Tasks:
 
 ### DATABASE DUMP
 
-<
-CREATE TABLE users
+
+>CREATE TABLE users
 (
   id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
   name character varying(255),
