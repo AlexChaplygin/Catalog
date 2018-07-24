@@ -4,7 +4,7 @@ Test task. Catalog of users with sectors
 Tasks:
  
 1. "Sectors" selectbox:
-1.1 Add all the entries from the "Sectors" selectbox to database
+   -Add all the entries from the "Sectors" selectbox to database
 1.2 Compose the "Sectors" selectbox using data from database
  
 2. Perform the following activities after the "Save" button has been pressed: 
