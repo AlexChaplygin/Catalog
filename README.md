@@ -2,7 +2,10 @@
 Test task. Catalog of users with sectors
 
 Tasks:
- 
+
+100. First list item
+     - First nested list item
+
 1. "Sectors" selectbox:
    -Add all the entries from the "Sectors" selectbox to database
 1.2 Compose the "Sectors" selectbox using data from database
