@@ -13,6 +13,8 @@ Tasks:
 2.3. Refill the form using stored data 
 2.4. Allow the user to edit his/her own data during the session
 
+---
+
 ![alt text](https://monosnap.com/image/AP1UMd4gAXwq5cg6Pzac35CuFxcBHq.png)
 
 ### TECHNOLOGIES AND TOOLS
