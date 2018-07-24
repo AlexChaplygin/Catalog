@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<body ng-app="mainModule" ng-controller="sectorController" style="margin-left: 10px;">
+
+Please enter your name and pick the Sectors you are currently involved in.
+<br/>
+<br/>
+
+<div id="select-type">
+    <div class="input">
+
+        <ui-select style="margin-left: -15px;" ng-disabled="selectDisabled" ng-model="users.selectedUser"
+                   ng-change="changeName()" class="col-lg-4">
+            <ui-select-match placeholder="Name">{{$select.selected.name ? $select.selected.name : $select.selected}}
+            </ui-select-match>
+            <ui-select-choices repeat="item in getUsers($select.search) | filter: $select.search">
+                <div ng-bind="item.name"></div>
+            </ui-select-choices>
+        </ui-select>
+
+    </div>
+</div>
+
+<br/>
+<br/>
+Sectors:
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <hierarchy-search list="list"></hierarchy-search>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<input type="checkbox" ng-model="agreeChebox"> Agree to terms</input>
+
+<br/>
+<br/>
+
+<button class="btn btn-success"
+        ng-click="submit()" ng-disabled="hasSubmit()">
+    <i class="glyphicon glyphicon-ok"> Save</i></button>
+
+</body>
+
+<head>
+    <title>Test task</title>
+    <meta charset="utf-8">
+
+    <script src="js/angular/angular.js"></script>
+    <script src="js/uitree/angular-ui-tree.js"></script>
+    <script src="js/mainController.js"></script>
+    <script src="js/sectorController.js"></script>
+    <script src="js/angular-ui-select/select.js"></script>
+    <script src="js/ngStorage/ngStorage.js"></script>
+
+    <script src="js/uitree/underscore-min.js"></script>
+    <script src="js/uitree/ui-tree.js"></script>
+    <script src="js/uitree/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="js/uitree/HierarchyNodeService.js"></script>
+    <script src="js/uitree/hierarchySearch.js"></script>
+    <link rel="stylesheet" href="css/tree.css"/>
+
+    <script src="js/uitree/angular-sanitize.js"></script>
+
+    <link rel="stylesheet" href="js/angular-ui-select/select.css">
+    <link rel="stylesheet" href="css/angular-ui-tree.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+    <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/select2.css">
+
+</head>
+</html>
