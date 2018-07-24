@@ -18,6 +18,8 @@ Tasks:
 
 ![alt text](https://monosnap.com/image/AP1UMd4gAXwq5cg6Pzac35CuFxcBHq.png)
 
+---
+
 ### TECHNOLOGIES AND TOOLS
 
 | # | Title |
@@ -28,8 +30,6 @@ Tasks:
 |4| JWT |
 |5| AngularJS |
 |6| PostgreSQL |
-
----
 
 ### DATABASE DUMP
 
