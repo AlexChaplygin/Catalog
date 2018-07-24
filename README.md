@@ -31,7 +31,7 @@ Tasks:
 
 | Table | SQL |
 | ----- | ----- |
-|users| CREATE TABLE users
+|users| CREATE TABLE users/n
 (
   id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
   name character varying(255),
