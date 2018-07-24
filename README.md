@@ -13,7 +13,8 @@ Tasks:
 2.3. Refill the form using stored data 
 2.4. Allow the user to edit his/her own data during the session
 
-TECHNOLOGIES AND TOOLS:
+### TECHNOLOGIES AND TOOLS
+
 | # | Title |
 |---| ----- |
 |1| Java |
