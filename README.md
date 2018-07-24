@@ -31,7 +31,7 @@ Tasks:
 |5| AngularJS |
 |6| PostgreSQL |
 
-### DATABASE DUMP
+### DATABASE DUMP (see backup.backup file)
 
 >CREATE DATABASE catalog
   WITH OWNER = postgres
