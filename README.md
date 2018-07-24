@@ -43,7 +43,7 @@ WITH (
 ALTER TABLE users
   OWNER TO postgres;
   
-CREATE TABLE sectors
+>CREATE TABLE sectors
 (
   id integer NOT NULL DEFAULT nextval('sector_id_seq'::regclass),
   parent_id integer,
@@ -56,7 +56,7 @@ WITH (
 ALTER TABLE sectors
   OWNER TO postgres;
 
-CREATE TABLE user_sector
+>CREATE TABLE user_sector
 (
   user_id integer NOT NULL,
   sector_id integer NOT NULL,
@@ -73,7 +73,7 @@ WITH (
 ALTER TABLE user_sector
   OWNER TO postgres;
 
-CREATE SEQUENCE sector_id_seq
+>CREATE SEQUENCE sector_id_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 9223372036854775807
@@ -82,7 +82,7 @@ CREATE SEQUENCE sector_id_seq
 ALTER TABLE sector_id_seq
   OWNER TO postgres;
 
-CREATE SEQUENCE user_id_seq
+>CREATE SEQUENCE user_id_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 9223372036854775807
@@ -90,4 +90,3 @@ CREATE SEQUENCE user_id_seq
   CACHE 1;
 ALTER TABLE user_id_seq
   OWNER TO postgres;
->
