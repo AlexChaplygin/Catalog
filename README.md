@@ -13,6 +13,8 @@ Tasks:
 2.3. Refill the form using stored data 
 2.4. Allow the user to edit his/her own data during the session
 
+![alt text](http://take.ms/vKTFD)
+
 ### TECHNOLOGIES AND TOOLS
 
 | # | Title |
@@ -23,3 +25,65 @@ Tasks:
 |4| JWT |
 |5| AngularJS |
 |6| PostgreSQL |
+
+
+### DATABASE DUMP
+
+| Table | SQL |
+| ----- | ----- |
+|users| CREATE TABLE users
+(
+  id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
+  name character varying(255),
+  agree boolean,
+  CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE users
+  OWNER TO postgres; |
+|sectors|CREATE TABLE sectors
+(
+  id integer NOT NULL DEFAULT nextval('sector_id_seq'::regclass),
+  parent_id integer,
+  name character varying(250) NOT NULL,
+  CONSTRAINT sectors_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE sectors
+  OWNER TO postgres;|
+|user_sector|CREATE TABLE user_sector
+(
+  user_id integer NOT NULL,
+  sector_id integer NOT NULL,
+  CONSTRAINT sector_fk FOREIGN KEY (sector_id)
+      REFERENCES sectors (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT user_fk FOREIGN KEY (user_id)
+      REFERENCES users (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE user_sector
+  OWNER TO postgres;|
+|sector_id_seq|CREATE SEQUENCE sector_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 7
+  CACHE 1;
+ALTER TABLE sector_id_seq
+  OWNER TO postgres;|
+|user_id_seq|CREATE SEQUENCE user_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 4
+  CACHE 1;
+ALTER TABLE user_id_seq
+  OWNER TO postgres;|
