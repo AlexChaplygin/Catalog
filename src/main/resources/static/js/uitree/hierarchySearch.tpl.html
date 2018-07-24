@@ -2,7 +2,7 @@
     <div class="hierarchy-wrap">
         <div ng-show="!emptyData" ui-tree="options" data-drag-enabled="false">
             <ol id="demoTree" ui-tree-nodes="" ng-model="list">
-                <li ng-repeat="item in list" ui-tree-node collapsed="true"
+                <li ng-repeat="item in list" ui-tree-node collapsed="false"
                     ng-include="'js/uitree/items_renderer.html'"></li>
             </ol>
         </div>
